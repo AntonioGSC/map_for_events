@@ -10,6 +10,8 @@ class FavoriteEventsWidget extends StatefulWidget {
 class _FavoriteEventsWidgetState extends State<FavoriteEventsWidget> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Scaffold(
+      body: Center(child: Text('Favorite', style: TextStyle(fontSize: 60))),
+    );
   }
 }
