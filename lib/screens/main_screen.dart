@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:map_for_events/screens/favorite.dart';
 import 'package:map_for_events/screens/home.dart';
+import 'package:map_for_events/screens/map.dart';
 import 'package:map_for_events/screens/my_event.dart';
 import 'package:map_for_events/screens/profile.dart';
 import 'package:map_for_events/utils/contants.dart';
@@ -19,7 +20,7 @@ class _MainWidgetState extends State<MainWidget> {
   final duration = const Duration(milliseconds: 400);
   final pages = const [
     HomeWidget(),
-    MyEventsWidget(),
+    MapWidget(),
     MyEventsWidget(),
     FavoriteEventsWidget(),
     ProfileWidget()
@@ -43,6 +44,7 @@ class _MainWidgetState extends State<MainWidget> {
       body: PageView(
         controller: pc,
         onPageChanged: setPage,
+        physics: const NeverScrollableScrollPhysics(),
         children: pages,
       ),
       bottomNavigationBar: BottomNavigationBar(
