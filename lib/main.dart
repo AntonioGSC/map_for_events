@@ -1,13 +1,13 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:map_for_events/screens/favorite.dart';
-import 'package:map_for_events/screens/home.dart';
 import 'package:map_for_events/screens/login.dart';
+import 'package:map_for_events/screens/main_screen.dart';
 import 'package:map_for_events/screens/map.dart';
 import 'package:map_for_events/screens/my_event.dart';
 import 'package:map_for_events/screens/profile.dart';
+
+import 'firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
           ),
       routes: {
         "/": (context) => const LoginScreenWidget(),
-        "/home": (context) => const HomeWidget(),
+        "/home": (context) => const MainWidget(),
         "/events": (context) => const MyEventsWidget(),
         "/favorite": (context) => const FavoriteEventsWidget(),
         "/map": (context) => const MapWidget(),

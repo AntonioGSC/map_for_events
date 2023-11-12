@@ -44,29 +44,6 @@ class _HomeWidgetState extends State<HomeWidget> {
   Widget build(BuildContext context) {
     ScreenUtil.init(context, designSize: const Size(700, 1400));
     return Scaffold(
-      appBar: AppBar(
-        title: appName, // Substitua pelo seu título
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.logout),
-            onPressed: () {
-              LoginScreenWidget.logout(context); // Chamando a função estática
-            },
-          ),
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          currentIndex: 0,
-          items: const [
-            BottomNavigationBarItem(
-                icon: iconHome, label: 'Home', backgroundColor: colorMainBlue),
-            BottomNavigationBarItem(icon: iconSearch, label: 'Procurar'),
-            BottomNavigationBarItem(icon: iconTicket, label: 'Eventos'),
-            BottomNavigationBarItem(icon: iconFavorite, label: 'Favoritos'),
-            BottomNavigationBarItem(icon: iconUser, label: 'Perfil'),
-          ]),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
