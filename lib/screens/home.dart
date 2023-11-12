@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:map_for_events/screens/login.dart';
 import 'package:map_for_events/utils/contants.dart';
 
 class HomeWidget extends StatefulWidget {
@@ -13,8 +14,17 @@ class _HomeWidgetState extends State<HomeWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: appName,
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary),
+        title: appName, // Substitua pelo seu título
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.logout),
+            onPressed: () {
+              LoginScreenWidget.logout(context); // Chamando a função estática
+            },
+          ),
+        ],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: 0,
