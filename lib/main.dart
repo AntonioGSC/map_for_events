@@ -1,9 +1,20 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import 'package:flutter/material.dart';
-import 'package:map_for_events/screens/main_screen.dart';
-import 'package:map_for_events/utils/contants.dart';
+import 'package:map_for_events/screens/favorite.dart';
+import 'package:map_for_events/screens/home.dart';
+import 'package:map_for_events/screens/login.dart';
+import 'package:map_for_events/screens/map.dart';
+import 'package:map_for_events/screens/my_event.dart';
+import 'package:map_for_events/screens/profile.dart';
 
-void main() {
-  runApp(const MyApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -15,10 +26,20 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Map4Events',
       theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(
-              seedColor: colorMainBlue, background: colorBackground),
-          useMaterial3: true),
-      home: const MainWidget(),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.amber),
+          useMaterial3: true
+          // primarySwatch: Colors.amber,
+          // visualDensity: VisualDensity.adaptivePlatformDensity,
+          ),
+      routes: {
+        "/": (context) => const LoginScreenWidget(),
+        "/home": (context) => const HomeWidget(),
+        "/events": (context) => const MyEventsWidget(),
+        "/favorite": (context) => const FavoriteEventsWidget(),
+        "/map": (context) => const MapWidget(),
+        "/profile": (context) => const ProfileWidget(),
+      },
+      initialRoute: "/",
     );
   }
 }
