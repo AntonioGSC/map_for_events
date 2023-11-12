@@ -26,8 +26,8 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget> {
   final TextEditingController repeatPasswordController =
       TextEditingController();
 
-  bool isRegisteredEmail = false; // Flag to check if the email is registered
-  bool isEmailChecked = false; // Flag to check if the email has been verified
+  bool isRegisteredEmail = false;
+  bool isEmailChecked = false;
 
   void resetForm() {
     emailController.clear();
