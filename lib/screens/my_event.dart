@@ -10,6 +10,8 @@ class MyEventsWidget extends StatefulWidget {
 class _MyEventsWidgetState extends State<MyEventsWidget> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Scaffold(
+      body: Center(child: Text('Events', style: TextStyle(fontSize: 60))),
+    );
   }
 }
