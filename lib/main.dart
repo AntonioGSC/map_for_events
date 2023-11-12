@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Map4Events',
       theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: colorMainBlue),
+          colorScheme: ColorScheme.fromSeed(
+              seedColor: colorMainBlue, background: colorBackground),
           useMaterial3: true),
       home: const MainWidget(),
     );
