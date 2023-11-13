@@ -51,12 +51,17 @@ class _HomeWidgetState extends State<HomeWidget> {
             Stack(
               alignment: Alignment.bottomLeft,
               children: [
+                
                 Image.asset(
                   'assets/ccxp-sp.jpeg',
                   height: 200,
                   fit: BoxFit.cover,
+
                 ),
-                Column(
+                
+                 Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
@@ -78,6 +83,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                     ),
                   ],
                 ),
+                 )
               ],
             ),
             Padding(
