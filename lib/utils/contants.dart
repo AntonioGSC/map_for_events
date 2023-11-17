@@ -92,7 +92,7 @@ final List<Eventos> eventos = [
     "Pago",
     "https://www.ces.tech/",
     "Feira de Tecnologia",
-    false,
+    true,
   ),
   Eventos(
     "Google I/O 2018",
@@ -104,7 +104,7 @@ final List<Eventos> eventos = [
     "Gratuito",
     "https://events.google.com/io/",
     "Conferência de Desenvolvedores",
-    false,
+    true,
   ),
   Eventos(
     "WWDC 2019",
@@ -128,7 +128,7 @@ final List<Eventos> eventos = [
     "Pago",
     "https://reinvent.awsevents.com/",
     "Conferência de Tecnologia",
-    false,
+    true,
   ),
   Eventos(
     "Mobile World Congress 2020",
@@ -140,7 +140,7 @@ final List<Eventos> eventos = [
     "Pago",
     "https://www.mwcbarcelona.com/",
     "Feira de Tecnologia",
-    true,
+    false,
   ),
   Eventos(
     "E3 2020",

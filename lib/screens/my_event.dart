@@ -23,7 +23,7 @@ class _MyEventsWidgetState extends State<MyEventsWidget> {
               Container(
                   margin: marginTop,
                   child: const Text(
-                    'Meus eventos ativos',
+                    'Meus eventos',
                     style: textStyle24,
                   ))
             ],
