@@ -83,18 +83,6 @@ final List<MapInformation> mapInformation = [
 
 final List<Eventos> eventos = [
   Eventos(
-    "CCXP 2022",
-    "Feira Geek, Games e cultura POP",
-    "assets/ccxp-sp.jpeg",
-    "9-12 de dezembro de 2022",
-    "São Paulo, SP",
-    "09:00 - 18:00",
-    "Pago",
-    "https://www.ccxp.com.br/",
-    "Feira Geek, Games e cultura POP",
-    true,
-  ),
-  Eventos(
     "CES 2018",
     "Feira de eletrônicos de consumo, apresentando as últimas inovações tecnológicas.",
     "assets/ces-2018.png",
@@ -104,7 +92,7 @@ final List<Eventos> eventos = [
     "Pago",
     "https://www.ces.tech/",
     "Feira de Tecnologia",
-    true,
+    false,
   ),
   Eventos(
     "Google I/O 2018",
@@ -116,7 +104,7 @@ final List<Eventos> eventos = [
     "Gratuito",
     "https://events.google.com/io/",
     "Conferência de Desenvolvedores",
-    true,
+    false,
   ),
   Eventos(
     "WWDC 2019",
