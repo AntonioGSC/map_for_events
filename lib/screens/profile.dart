@@ -53,54 +53,62 @@ class _ProfileWidgetState extends State<ProfileWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.logout),
+            onPressed: () async {
+              await FirebaseAuth.instance.signOut();
+              Navigator.pushReplacementNamed(context, '/');
+            },
+          )
+        ],
+      ),
       body: userData == null
           ? const Center(
               child:
                   CircularProgressIndicator()) // Exibir um spinner enquanto os dados não são carregados
           : SingleChildScrollView(
-              child: Container(
-                margin: marginTop,
-                child: Center(
-                  child: Column(
-                    children: <Widget>[
-                      CircleAvatar(
-                        radius: 60,
-                        backgroundImage: NetworkImage(userData?.imageUrl ??
-                            'https://th.bing.com/th/id/R.4871374905aa85c48423c26517b5bc71?rik=%2baH%2brtYTFbRAvA&pid=ImgRaw&r=0'), // Substitua 'default_image_url' pelo seu URL de imagem padrão
+              child: Center(
+                child: Column(
+                  children: <Widget>[
+                    CircleAvatar(
+                      radius: 60,
+                      backgroundImage: NetworkImage(userData?.imageUrl ??
+                          'https://th.bing.com/th/id/R.4871374905aa85c48423c26517b5bc71?rik=%2baH%2brtYTFbRAvA&pid=ImgRaw&r=0'), // Substitua 'default_image_url' pelo seu URL de imagem padrão
+                    ),
+                    IconButton(
+                      icon: Icon(Icons.edit),
+                      onPressed: _pickImage,
+                    ),
+                    const SizedBox(height: 16),
+                    Text(
+                      "${userData?.firstName ?? ''} ${userData?.lastName ?? ''}"
+                          .trim(),
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 24,
                       ),
-                      IconButton(
-                        icon: Icon(Icons.edit),
-                        onPressed: _pickImage,
+                    ),
+                    const SizedBox(height: 24),
+                    const Divider(),
+                    const Padding(
+                      padding:
+                          EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          Icon(FontAwesomeIcons.facebook),
+                          Icon(FontAwesomeIcons.linkedin),
+                          Icon(FontAwesomeIcons.twitter),
+                          Icon(FontAwesomeIcons.googlePlus),
+                        ],
                       ),
-                      const SizedBox(height: 16),
-                      Text(
-                        "${userData?.firstName ?? ''} ${userData?.lastName ?? ''}"
-                            .trim(),
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 24,
-                        ),
-                      ),
-                      const SizedBox(height: 24),
-                      const Divider(),
-                      const Padding(
-                        padding: EdgeInsets.symmetric(
-                            vertical: 8.0, horizontal: 16.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            Icon(FontAwesomeIcons.facebook),
-                            Icon(FontAwesomeIcons.linkedin),
-                            Icon(FontAwesomeIcons.twitter),
-                            Icon(FontAwesomeIcons.googlePlus),
-                          ],
-                        ),
-                      ),
-                      Divider(),
-                      _editPhoneWidget(),
-                      _editEmailWidget(),
-                    ],
-                  ),
+                    ),
+                    Divider(),
+                    _editPhoneWidget(),
+                    _editEmailWidget(),
+                  ],
                 ),
               ),
             ),
