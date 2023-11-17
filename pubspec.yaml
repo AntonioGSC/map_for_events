@@ -74,6 +74,15 @@ flutter:
     - assets/ccxp-2022.jpg
     - assets/ccxp-sp.jpeg
     - assets/map.jpg
+  # novas imagens incluídas no projeto
+    - assets/ces-2018.png
+    - assets/google-i-o.png
+    - assets/WWDC2019.png
+    - assets/aws-re-invent-2019.png
+    - assets/mwc_2020.png
+    - assets/e3_2020.png
+
+
 
   #   - images/a_dot_ham.jpeg
   # To add assets to your application, add an assets section, like this:

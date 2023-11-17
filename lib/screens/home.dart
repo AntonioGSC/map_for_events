@@ -18,7 +18,7 @@ class HomeWidget extends StatefulWidget {
 class _HomeWidgetState extends State<HomeWidget> {
   List<Eventos> eventos = [
     Eventos('nome', 'descricao', 'imagem', 'data', 'local', 'horario', 'valor',
-        'link', 'categoria')
+        'link', 'categoria', false)
   ];
 
   List<EmAlta> emAlta = [

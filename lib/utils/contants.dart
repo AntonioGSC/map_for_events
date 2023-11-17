@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:map_for_events/models/eventos.dart';
 import 'package:map_for_events/models/map_information.dart';
 
 const paddingAll = EdgeInsets.all(8);
@@ -78,4 +79,79 @@ final List<MapInformation> mapInformation = [
       hourStart: '13:00',
       hourFinish: '22:00',
       color: colorMainBlue),
+];
+
+final List<Eventos> eventos = [
+  Eventos(
+    "CES 2018",
+    "Feira de eletrônicos de consumo, apresentando as últimas inovações tecnológicas.",
+    "assets/ces-2018.png",
+    "9-12 de janeiro de 2018",
+    "Las Vegas Convention Center, EUA",
+    "09:00 - 18:00",
+    "Pago",
+    "https://www.ces.tech/",
+    "Feira de Tecnologia",
+    true,
+  ),
+  Eventos(
+    "Google I/O 2018",
+    "Conferência anual de desenvolvedores do Google, destacando novas tecnologias e produtos.",
+    "assets/google-i-o.png",
+    "8-10 de maio de 2018",
+    "Shoreline Amphitheatre, Mountain View, EUA",
+    "Varia",
+    "Gratuito",
+    "https://events.google.com/io/",
+    "Conferência de Desenvolvedores",
+    true,
+  ),
+  Eventos(
+    "WWDC 2019",
+    "Conferência Anual de Desenvolvedores da Apple, anunciando as últimas atualizações do iOS, macOS, etc.",
+    "assets/WWDC2019.png",
+    "3-7 de junho de 2019",
+    "San Jose Convention Center, EUA",
+    "Varia",
+    "Gratuito",
+    "https://developer.apple.com/wwdc/",
+    "Conferência de Desenvolvedores",
+    true,
+  ),
+  Eventos(
+    "AWS re:Invent 2019",
+    "Conferência da Amazon Web Services sobre computação em nuvem, inteligência artificial e muito mais.",
+    "assets/aws-re-invent-2019.png",
+    "2-6 de dezembro de 2019",
+    "Las Vegas, EUA",
+    "Varia",
+    "Pago",
+    "https://reinvent.awsevents.com/",
+    "Conferência de Tecnologia",
+    false,
+  ),
+  Eventos(
+    "Mobile World Congress 2020",
+    "Feira global de tecnologia móvel, destacando inovações em dispositivos móveis.",
+    "assets/mwc_2020.png",
+    "24-27 de fevereiro de 2020",
+    "Fira Gran Via, Barcelona, Espanha",
+    "09:00 - 18:00",
+    "Pago",
+    "https://www.mwcbarcelona.com/",
+    "Feira de Tecnologia",
+    true,
+  ),
+  Eventos(
+    "E3 2020",
+    "Feira de jogos eletrônicos, apresentando os últimos lançamentos da indústria de videogames.",
+    "assets/e3_2020.png",
+    "9-11 de junho de 2020",
+    "Los Angeles Convention Center, EUA",
+    "Varia",
+    "Pago",
+    "https://www.e3expo.com/",
+    "Feira de Jogos",
+    false,
+  )
 ];

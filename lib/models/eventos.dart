@@ -11,6 +11,7 @@ class Eventos {
   final String valor;
   final String link;
   final String categoria;
+  final bool status;
 
-  Eventos(this.nome, this.descricao, this.imagem, this.data, this.local, this.horario, this.valor, this.link, this.categoria);
+  Eventos(this.nome, this.descricao, this.imagem, this.data, this.local, this.horario, this.valor, this.link, this.categoria, this.status);
 }
