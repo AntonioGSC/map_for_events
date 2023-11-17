@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:map_for_events/models/ImageCardList.dart';
+import 'package:map_for_events/models/ImageCardListFavourite.dart';
 import 'package:map_for_events/utils/contants.dart';
 
 class FavoriteEventsWidget extends StatefulWidget {
@@ -32,7 +33,7 @@ class _FavoriteEventsWidgetState extends State<FavoriteEventsWidget> {
           ],
         ),
         Expanded(
-          child: ImageCardList(),
+          child: ImageCardListFavorite(),
         )
       ],
     ));

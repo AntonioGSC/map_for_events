@@ -24,7 +24,7 @@ Widget build(BuildContext context) {
           padding: const EdgeInsets.all(30),
           margin: const EdgeInsets.only(top: 30, left:30,right: 30),
           decoration: BoxDecoration(
-              color: Colors.teal.withOpacity(0.8),
+              color: Colors.blueAccent.shade400.withOpacity(0.95),
               borderRadius: BorderRadius.circular(22)),
           textStyle: const TextStyle(
               fontSize: 15,
