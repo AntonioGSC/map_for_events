@@ -37,6 +37,7 @@ Widget build(BuildContext context) {
                 height: 150, // Ajuste a altura conforme necessário
                 width: double.infinity,
                 fit: BoxFit.cover,
+                
               ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -44,16 +45,16 @@ Widget build(BuildContext context) {
                     title: Text(_eventos[index].nome),
                     onTap: () {
                       Navigator.pushNamed(context, '/map');
-                    }, // Adicione o título do evento aqui
-                  ),
-                ),
-               const Row(mainAxisAlignment: MainAxisAlignment.start,
+                    },
+                    trailing: const Row(mainAxisSize: MainAxisSize.min,
                 children: [
                   Icon(
-                    Icons.favorite_outline_rounded, 
+                    Icons.favorite_rounded, 
                     color: Colors.pink),
                   ],
-                )
+                ), // Adicione o título do evento aqui
+                  ),
+                ),
             ],
           ),
         ),
