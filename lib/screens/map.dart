@@ -18,56 +18,52 @@ class _MapWidgetState extends State<MapWidget> {
   Widget build(BuildContext context) {
     ScreenUtil.init(context, designSize: const Size(700, 1400));
     return Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            'CCXP - São Paulo',
+            style: textStyle24,
+          ),
+        ),
         body: Container(
-      child: Column(
-        children: [
-          Row(
+          child: Column(
             children: [
-              Container(
-                  margin: marginTop,
-                  child: const Text(
-                    'CCXP - São Paulo',
-                    style: textStyle24,
-                  ))
-            ],
-          ),
-          Row(
-            children: [
-              Container(
-                width: ScreenUtil().setWidth(670),
-                height: ScreenUtil().setHeight(500),
-                margin: marginHorizontal,
-                padding: paddingAll,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: colorBlack,
-                ),
-                child: InteractiveViewer(
-                    maxScale: 10,
-                    minScale: 1,
-                    boundaryMargin: marginAll10,
-                    child: Image.asset('assets/map.jpg')),
+              Row(
+                children: [
+                  Container(
+                    width: ScreenUtil().setWidth(670),
+                    height: ScreenUtil().setHeight(500),
+                    margin: marginHorizontal,
+                    padding: paddingAll,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: colorBlack,
+                    ),
+                    child: InteractiveViewer(
+                        maxScale: 10,
+                        minScale: 1,
+                        boundaryMargin: marginAll10,
+                        child: Image.asset('assets/map.jpg')),
+                  ),
+                ],
               ),
-            ],
-          ),
-          Row(
-            children: [
-              Container(
-                width: ScreenUtil().setWidth(670),
-                height: ScreenUtil().setHeight(590),
-                padding: paddingAll,
-                margin: marginHorizontal,
-                child: CarouselSlider(
-                    items: _carouselInformation(),
-                    options: CarouselOptions(
-                        height: ScreenUtil().setHeight(500),
-                        enlargeCenterPage: true)),
+              Row(
+                children: [
+                  Container(
+                    width: ScreenUtil().setWidth(670),
+                    height: ScreenUtil().setHeight(590),
+                    padding: paddingAll,
+                    margin: marginHorizontal,
+                    child: CarouselSlider(
+                        items: _carouselInformation(),
+                        options: CarouselOptions(
+                            height: ScreenUtil().setHeight(500),
+                            enlargeCenterPage: true)),
+                  )
+                ],
               )
             ],
-          )
-        ],
-      ),
-    ));
+          ),
+        ));
   }
 
   List<Widget> _carouselInformation() {

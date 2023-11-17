@@ -20,7 +20,6 @@ class _MainWidgetState extends State<MainWidget> {
   final duration = const Duration(milliseconds: 400);
   final pages = const [
     HomeWidget(),
-    MapWidget(),
     MyEventsWidget(),
     FavoriteEventsWidget(),
     ProfileWidget()
@@ -61,7 +60,6 @@ class _MainWidgetState extends State<MainWidget> {
         }),
         items: const [
           BottomNavigationBarItem(icon: iconHome, label: 'Home'),
-          BottomNavigationBarItem(icon: iconSearch, label: 'Procurar'),
           BottomNavigationBarItem(icon: iconTicket, label: 'Eventos'),
           BottomNavigationBarItem(icon: iconFavorite, label: 'Favoritos'),
           BottomNavigationBarItem(icon: iconUser, label: 'Perfil'),

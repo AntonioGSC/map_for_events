@@ -7,6 +7,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:map_for_events/models/user.dart';
+import 'package:map_for_events/utils/contants.dart';
 import 'package:path/path.dart' as Path;
 
 class ProfileWidget extends StatefulWidget {
@@ -52,58 +53,54 @@ class _ProfileWidgetState extends State<ProfileWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: const BackButton(
-          color: Colors.black,
-        ),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      ),
       body: userData == null
           ? const Center(
               child:
                   CircularProgressIndicator()) // Exibir um spinner enquanto os dados não são carregados
           : SingleChildScrollView(
-              child: Center(
-                child: Column(
-                  children: <Widget>[
-                    CircleAvatar(
-                      radius: 60,
-                      backgroundImage: NetworkImage(userData?.imageUrl ??
-                          'https://th.bing.com/th/id/R.4871374905aa85c48423c26517b5bc71?rik=%2baH%2brtYTFbRAvA&pid=ImgRaw&r=0'), // Substitua 'default_image_url' pelo seu URL de imagem padrão
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.edit),
-                      onPressed: _pickImage,
-                    ),
-                    const SizedBox(height: 16),
-                    Text(
-                      "${userData?.firstName ?? ''} ${userData?.lastName ?? ''}"
-                          .trim(),
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 24,
+              child: Container(
+                margin: marginTop,
+                child: Center(
+                  child: Column(
+                    children: <Widget>[
+                      CircleAvatar(
+                        radius: 60,
+                        backgroundImage: NetworkImage(userData?.imageUrl ??
+                            'https://th.bing.com/th/id/R.4871374905aa85c48423c26517b5bc71?rik=%2baH%2brtYTFbRAvA&pid=ImgRaw&r=0'), // Substitua 'default_image_url' pelo seu URL de imagem padrão
                       ),
-                    ),
-                    const SizedBox(height: 24),
-                    const Divider(),
-                    const Padding(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: <Widget>[
-                          Icon(FontAwesomeIcons.facebook),
-                          Icon(FontAwesomeIcons.linkedin),
-                          Icon(FontAwesomeIcons.twitter),
-                          Icon(FontAwesomeIcons.googlePlus),
-                        ],
+                      IconButton(
+                        icon: Icon(Icons.edit),
+                        onPressed: _pickImage,
                       ),
-                    ),
-                    Divider(),
-                    _editPhoneWidget(),
-                    _editEmailWidget(),
-                  ],
+                      const SizedBox(height: 16),
+                      Text(
+                        "${userData?.firstName ?? ''} ${userData?.lastName ?? ''}"
+                            .trim(),
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 24,
+                        ),
+                      ),
+                      const SizedBox(height: 24),
+                      const Divider(),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(
+                            vertical: 8.0, horizontal: 16.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            Icon(FontAwesomeIcons.facebook),
+                            Icon(FontAwesomeIcons.linkedin),
+                            Icon(FontAwesomeIcons.twitter),
+                            Icon(FontAwesomeIcons.googlePlus),
+                          ],
+                        ),
+                      ),
+                      Divider(),
+                      _editPhoneWidget(),
+                      _editEmailWidget(),
+                    ],
+                  ),
                 ),
               ),
             ),
