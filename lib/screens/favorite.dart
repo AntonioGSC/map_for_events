@@ -25,7 +25,7 @@ class _FavoriteEventsWidgetState extends State<FavoriteEventsWidget> {
                 Container(
                     margin: marginTop,
                     child: const Text(
-                      'Meus eventos favoritos',
+                      'Meus favoritos',
                       style: textStyle24,
                     ))
               ],
